@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy Projects
 #COPY *.sln .
 COPY src/CleanArchitecture.Web/CleanArchitecture.Web.csproj ./src/CleanArchitecture.Web/
+COPY Directory.Packages.props ./src
 
 # .NET Restore
 RUN dotnet restore ./src/CleanArchitecture.Web/CleanArchitecture.Web.csproj
