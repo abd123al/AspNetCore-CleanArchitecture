@@ -12,7 +12,7 @@ COPY src/CleanArchitecture.Web/CleanArchitecture.Web.csproj ./src/CleanArchitect
 RUN dotnet restore ./src/CleanArchitecture.Web/CleanArchitecture.Web.csproj
 
 # Copy All Files
-COPY Src ./Src
+COPY src ./src
 
 # .NET Build and Publish
 RUN dotnet publish ./src/CleanArchitecture.Web/CleanArchitecture.Web.csproj -c Release -o /publish
