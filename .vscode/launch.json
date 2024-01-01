@@ -1,0 +1,54 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "watch-dev",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "watch",
+        "program": "${workspaceFolder}/src/CleanArchitecture.Web/bin/Debug/net8.0/CleanArchitecture.Web.dll",
+        "args": [],
+        "cwd": "${workspaceFolder}/src/CleanArchitecture.Web",
+        "stopAtEntry": false,
+        "console": "internalConsole",
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS": "http://localhost:5000/"
+        },
+      },
+      {
+        "name": "dev",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "${workspaceFolder}/src/CleanArchitecture.Web/bin/Debug/net8.0/CleanArchitecture.Web.dll",
+        "args": [],
+        "cwd": "${workspaceFolder}/src/CleanArchitecture.Web",
+        "stopAtEntry": false,
+        "console": "internalConsole",
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS": "http://localhost:5000/"
+        },
+      },
+      {
+        "name": "prod",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "${workspaceFolder}/src/CleanArchitecture.Web/bin/Debug/net8.0/CleanArchitecture.Web.dll",
+        "args": [],
+        "cwd": "${workspaceFolder}/src/CleanArchitecture.Web",
+        "stopAtEntry": false,
+        "console": "internalConsole",
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Production",
+          "ASPNETCORE_URLS": "http://localhost:5000/"
+        },
+      },
+    ],
+    "compounds": []
+  }
