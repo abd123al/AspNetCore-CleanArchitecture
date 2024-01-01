@@ -33,4 +33,4 @@ jobs:
         with:
           push: true
           tags: ghcr.io/ntxinh/aspnetcore-cleanarchitecture:latest
-          # file: Containerfile
+          file: Containerfile

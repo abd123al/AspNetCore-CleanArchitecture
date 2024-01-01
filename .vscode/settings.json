@@ -1,13 +1,13 @@
 {
     "search.exclude": {
-      "**/bin": true,
-      "**/obj": true
+      "**/**/bin": true,
+      "**/**/obj": true
     },
     "[csharp]": {
       "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
-        "source.fixAll": true,
-        "source.sortMembers": true,
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit",
+        "source.sortMembers": "explicit"
       },
       "editor.formatOnSave": true
     },
