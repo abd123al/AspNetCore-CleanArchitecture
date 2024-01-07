@@ -1,4 +1,4 @@
-using CleanArchitecture.Web.Features.Todos.CreateTodo;
+using System.Reflection;
 
 using FluentValidation;
 
@@ -8,7 +8,8 @@ public static class FluentValidationExtension
 {
     public static IServiceCollection AddCustomizedFluentValidation(this IServiceCollection services)
     {
-        services.AddValidatorsFromAssemblyContaining<CreateTodoValidator>();
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        // services.AddValidatorsFromAssemblyContaining<CreateTodoValidator>();
 
         return services;
     }

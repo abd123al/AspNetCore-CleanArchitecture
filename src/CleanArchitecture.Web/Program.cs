@@ -4,9 +4,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // START: Custom services
 builder.Services.AddCustomizedRateLimit();
+builder.Services.AddCustomizedMediatR();
 builder.Services.AddCustomizedFluentValidation();
-builder.Services.AddCustomizedMediatRExtension();
+builder.Services.AddCustomizedAutoMapper();
 builder.Services.AddCustomizedSwagger();
+builder.Services.AddCustomizedRepository();
 // END: Custom services
 
 var app = builder.Build();
