@@ -1,14 +1,18 @@
+using CleanArchitecture.Infrastructure.Data;
+using CleanArchitecture.UseCases;
 using CleanArchitecture.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // START: Custom services
 builder.Services.AddCustomizedRateLimit();
-builder.Services.AddCustomizedMediatR();
 builder.Services.AddCustomizedFluentValidation();
 builder.Services.AddCustomizedAutoMapper();
 builder.Services.AddCustomizedSwagger();
+var connectionString = builder.Configuration.GetConnectionString("SQLiteConnection") ?? string.Empty;
+builder.Services.AddApplicationDbContext(connectionString);
 builder.Services.AddCustomizedRepository();
+builder.Services.AddCustomizedMediatR();
 // END: Custom services
 
 var app = builder.Build();

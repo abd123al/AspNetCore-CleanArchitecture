@@ -1,6 +1,8 @@
+using Microsoft.Extensions.DependencyInjection;
+
 using System.Reflection;
 
-namespace CleanArchitecture.Web.Extensions;
+namespace CleanArchitecture.UseCases;
 
 public static class MediatRExtension
 {

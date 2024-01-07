@@ -1,6 +1,9 @@
+using CleanArchitecture.UseCases.Todos.Create;
 using CleanArchitecture.Web.Extensions;
 
 using FluentValidation;
+
+using MediatR;
 
 // using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -23,7 +26,7 @@ public static class CreateTodoApi
         // Rate limit all of the APIs
         group.RequireFixedRateLimit();
 
-        group.MapPost("/", async (CreateTodoRequest newTodo, IValidator<CreateTodoRequest> validator) =>
+        group.MapPost("/", async (CreateTodoRequest newTodo, IValidator<CreateTodoRequest> validator, IMediator _mediator) =>
         {
             var validationResult = await validator.ValidateAsync(newTodo);
 
@@ -31,6 +34,8 @@ public static class CreateTodoApi
             {
                 return Results.ValidationProblem(validationResult.ToDictionary());
             }
+
+            await _mediator.Send(new CreateTodoCommand(newTodo.Title!, IsCompleted: false, newTodo.OwnerId!));
 
             return Results.Ok();
         });

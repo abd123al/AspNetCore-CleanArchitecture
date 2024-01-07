@@ -12,6 +12,7 @@ Prefer Microsoft's native support over third-party packages.
 - [x] [MediatR](https://github.com/jbogard/MediatR)
 - [x] [FluentValidator](https://github.com/FluentValidation/FluentValidation)
 - [x] [StyleCopAnalyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers)
+- [x] [SQLite](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite)
 - [PostgreSQL](https://github.com/npgsql/efcore.pg)
 - [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 
@@ -45,3 +46,20 @@ Prefer Microsoft's native support over third-party packages.
 - [x] `Directory.Build.props`
 - [x] `Directory.Packages.props`
 - [x] `License`
+
+# Migration
+
+```bash
+cd src/CleanArchitecture.Web
+
+dotnet ef migrations add InitialCreate -c AppDbContext -p ../CleanArchitecture.Infrastructure/CleanArchitecture.Infrastructure.csproj -s CleanArchitecture.Web.csproj -o Data/Migrations
+
+dotnet ef database update InitialCreate
+
+# Clean up
+dotnet ef database drop --force
+```
+
+# References
+
+- https://github.com/ardalis/CleanArchitecture
