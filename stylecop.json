@@ -5,14 +5,6 @@
         "indentationSize": 4,
         "tabSize": 4,
         "useTabs": false
-      },
-      "orderingRules": {
-        "usingDirectivesPlacement": "outsideNamespace",
-        "blankLinesBetweenUsingGroups": "allow",
-        "systemUsingDirectivesFirst": true
-      },
-      "documentationRules": {
-        "xmlHeader": false
       }
     }
   }

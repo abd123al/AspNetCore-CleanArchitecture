@@ -19,7 +19,7 @@ tab_width = 4
 
 # New line preferences
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true
 
 #### .NET Coding Conventions ####
 [*.{cs,vb}]
@@ -362,3 +362,19 @@ dotnet_naming_style.s_camelcase.required_suffix =
 dotnet_naming_style.s_camelcase.word_separator = 
 dotnet_naming_style.s_camelcase.capitalization = camel_case
 
+##
+## StyleCop.Analyzers
+##
+
+dotnet_diagnostic.SA0001.severity = None
+dotnet_diagnostic.SA1101.severity = None
+dotnet_diagnostic.SA1200.severity = None
+dotnet_diagnostic.SA1201.severity = None
+dotnet_diagnostic.SA1208.severity = None
+dotnet_diagnostic.SA1309.severity = None
+dotnet_diagnostic.SA1400.severity = None
+dotnet_diagnostic.SA1512.severity = None
+dotnet_diagnostic.SA1515.severity = None
+dotnet_diagnostic.SA1600.severity = None
+dotnet_diagnostic.SA1601.severity = None
+dotnet_diagnostic.SA1633.severity = None

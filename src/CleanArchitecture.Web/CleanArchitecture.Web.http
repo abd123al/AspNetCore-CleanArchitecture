@@ -1,6 +1,15 @@
 @CleanArchitecture.Web_HostAddress = http://localhost:5000
 
-GET {{CleanArchitecture.Web_HostAddress}}/weatherforecast/
+GET {{CleanArchitecture.Web_HostAddress}}/
 Accept: application/json
 
 ###
+
+POST {{CleanArchitecture.Web_HostAddress}}/todos
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "string",
+    "ownerId": "string"
+}
