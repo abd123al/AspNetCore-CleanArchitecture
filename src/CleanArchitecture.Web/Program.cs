@@ -1,6 +1,6 @@
 using CleanArchitecture.Infrastructure.Data;
-using CleanArchitecture.UseCases;
 using CleanArchitecture.Web.Extensions;
+using CleanArchitecture.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +14,7 @@ builder.Services.AddApplicationDbContext(connectionString);
 builder.Services.AddCustomizedRepository();
 builder.Services.AddCustomizedMediatR();
 builder.Services.AddCustomizedListService();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 // END: Custom services
 
 var app = builder.Build();
@@ -28,6 +29,7 @@ if (app.Environment.IsDevelopment())
 // START: Custom middlewares
 app.UseCustomizedRateLimit();
 app.UseCustomizedApi();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 // END: Custom middlewares
 
 // #pragma warning disable SA1649

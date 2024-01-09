@@ -1,12 +1,11 @@
+using CleanArchitecture.Core.Abstractions.Messaging;
 using CleanArchitecture.Core.TodoAggregate;
 using CleanArchitecture.Infrastructure.Data.Repository;
-
-using MediatR;
 
 namespace CleanArchitecture.UseCases.Todos.Create;
 
 public class CreateTodoHandler(ITodoRepository _repository)
-    : IRequestHandler<CreateTodoCommand, int>
+    : BaseHandler, ICommandHandler<CreateTodoCommand, int>
 {
     public async Task<int> Handle(CreateTodoCommand request, CancellationToken cancellationToken)
     {

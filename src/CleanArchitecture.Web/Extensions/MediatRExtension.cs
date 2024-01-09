@@ -1,8 +1,10 @@
-using Microsoft.Extensions.DependencyInjection;
+using CleanArchitecture.Core.Abstractions.Messaging;
+
+using MediatR;
 
 using System.Reflection;
 
-namespace CleanArchitecture.UseCases;
+namespace CleanArchitecture.Web.Extensions;
 
 public static class MediatRExtension
 {
@@ -13,6 +15,7 @@ public static class MediatRExtension
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             // cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
         });
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
         return services;
     }
