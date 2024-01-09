@@ -13,6 +13,7 @@ var connectionString = builder.Configuration.GetConnectionString("SQLiteConnecti
 builder.Services.AddApplicationDbContext(connectionString);
 builder.Services.AddCustomizedRepository();
 builder.Services.AddCustomizedMediatR();
+builder.Services.AddCustomizedListService();
 // END: Custom services
 
 var app = builder.Build();
@@ -21,6 +22,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseCustomizedSwagger();
+    app.UseCustomizedListService();
 }
 
 // START: Custom middlewares

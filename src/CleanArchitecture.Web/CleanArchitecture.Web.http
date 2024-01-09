@@ -5,6 +5,10 @@ Accept: application/json
 
 ###
 
+GET {{CleanArchitecture.Web_HostAddress}}/listservices
+
+###
+
 POST {{CleanArchitecture.Web_HostAddress}}/todos
 Accept: application/json
 Content-Type: application/json
